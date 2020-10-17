@@ -13,4 +13,4 @@ This Repo Contains Website which is created using HTML.
 [GitHub Pages](https://pages.github.com/) For Hosting  
 [Git](https://git-scm.com/) for source control
 
-To view the live demo, [click here](https://corkami.github.io/)
+To view the live demo, [click here](https://corkami.github.io/).
