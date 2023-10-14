@@ -184,7 +184,7 @@ function parseDescriptions(descArray) {
                     if ((0 <= value) && (value <= 9)) {
                         valueString = value.toString();
                     }
-                    else if (value > 10) {
+                    else if (value >= 10) {
                         valueString = "0x" + value.toString(16).toUpperCase();
                     }
                 } else if (typeof (value) === "string") {
