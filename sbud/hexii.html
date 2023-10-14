@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<title>HexII [Sbud]</title>
+<html>
+<style>
+    text {
+        white-space: pre;
+        font-variant-ligatures: none;
+    }
+
+    textarea {
+        width: 100%;
+        height: 150px;
+        padding: 10px 10px;
+        box-sizing: border-box;
+        border: 2px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        font-family: Inconsolata, Ubuntu Mono, Courier, DejaVu Sans Mono, Droid Sans Mono, Lucida Console, Menlo, Monaco, mononoki, monospace;
+    }
+
+    @media print {
+        body * {
+            display: none;
+        }
+
+        #svgdiv,
+        #svgdiv * {
+            width: 100%;
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <div>
+        <b>Sbud - HexII</b> <br>
+        <label for='examples'>Example:</label>
+        <select name='examples' id='exampleSelect' oninput='changeExample();'>
+            <option value=undefined>(none selected)</option>
+        </select>
+        <br>
+
+        Native Javascript object:
+        <form>
+            <textarea id="myJS" placeholder="0123456789ABCDEF&#10;i.|lMmP8O-=" height=5></textarea>
+        </form>
+
+
+        <button onclick="evalMyJS()">⚠ Eval this! to pure JSON</button><br />
+
+        <hr>
+        Pure JSON input:
+        <form>
+            <textarea id="myJSON" oninput="evalJSON()" placeholder="0123456789ABCDEF&#10;i.|lMmP8O-="
+                height=5></textarea>
+        </form>
+        <label for="fontsize">Font Size</label>
+        <input type="number" id="fontsize" name="fontsize" value="12"> <br>
+        Override font families:
+        <label for="descFont">Descriptions</label>
+        <input type="text" id="descFont" name="descFont" value="" placeholder="serif" oninput='changeThemeRender();'>
+
+        <label for="hexFont">Hex</label>
+        <input type="text" id="hexFont" name="hexFont" value="" placeholder="monospace" oninput="changeThemeRender();">
+
+        <label for="offsetFont">Offsets</label>
+        <input type="text" id="offsetFont" name="offsetFont" value="" placeholder="sans-serif"
+            oninput="changeThemeRender();">
+        <br>
+        <label for='themes'>Theme:</label>
+        <select name='themes' id='themeSelect' oninput='changeThemeRender();'> </select> <br>
+        <button onclick="render()">Render</button>
+        <button id='saveSVG'>Save as SVG</button>
+        <label for='pngWidth'>PNG Width:</label>
+        <input type="number" id="pngWidth" name="pngWidth" value="1500">
+        <button id='savePNG'>Save as PNG</button>
+        <br />
+
+        Status:
+        <div id="status">(waiting for input)</div>
+
+        <hr>
+        SVG rendering:
+    </div>
+    <div id="svgdiv" style="display: block;">
+
+    </div>
+
+    <script type='text/javascript' src='misc.js'></script>
+    <script type='text/javascript' src='fonts.js'></script>
+    <script type='text/javascript' src='palettes.js'></script>
+    <script type='text/javascript' src='themes.js'></script>
+    <script type='text/javascript' src='config.js'></script>
+    <script type='text/javascript' src='svg.js'></script>
+    <script type='text/javascript' src='examples.js'></script>
+    <script type='text/javascript' src='parser.js'></script>
+    <script type='text/javascript' src='hexii.js'></script>
+    <script type='text/javascript' src='save.js'></script>
+
+</html>
